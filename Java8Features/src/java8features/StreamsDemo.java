@@ -51,7 +51,13 @@ public class StreamsDemo {
 		String[] array = new String[] { "dello", "dorld", "ajay", "kumar", "data", "structures" };
 
 		Arrays.stream(array).filter(e -> e.startsWith("d")).sorted().forEach(System.out::println);
-
+		System.out.println("-------------------------------------------------");
+		
+		List<Employee> salariedEmployess = employees.stream().filter(e-> e.getSalary()>21).collect(Collectors.toList());
+		salariedEmployess.forEach(System.out::println);
+		
+		System.out.println("-------------------------------------------------");
+		
 		// average of squares of an int array
 		Arrays.stream(new int[] { 23, 3, 54, 23 }).map(x -> x * x).average().ifPresent(System.out::println);
 
